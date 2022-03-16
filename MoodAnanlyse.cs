@@ -6,20 +6,29 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyser
 {
-        public class MoodAnalyse
+    public class MoodAnalyse
+    {
+        private string message;
+        public MoodAnalyse(string message)
         {
-            private string message;
-            public MoodAnalyse(string message)
+            this.message = message;
+        }
+        public string AnalyserMethod()
+        {
+            try
             {
-                this.message = message;
-            }
-            public string AnalyserMethod()
-            {
-                if (this.message.Contains("sad"))
-                    return "sad";
+                if (this.message.Contains("SAD"))
+                    return "SAD";
+                else if (this.message.Contains("HAPPY"))
+                    return "SAD";
                 else
-                    return "happy";
+                    return "HAPPY";
+            }
+            catch
+            {
+                return "HAPPY";
             }
         }
+    }
 }
 
