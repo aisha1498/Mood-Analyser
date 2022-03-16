@@ -8,14 +8,19 @@ namespace MoodAnalyser
 {
     public class MoodAnalyse
     {
-        private string message;
-        public MoodAnalyse()
-        {
 
-        }
+        private string message;
+
+
         public MoodAnalyse(string message)
         {
             this.message = message;
+            Console.WriteLine("parameterised constructor");
+            Console.WriteLine(message);
+        }
+        public MoodAnalyse()
+        {
+            Console.WriteLine("default constructor");
         }
         public string AnalyserMethod()
         {
@@ -33,5 +38,6 @@ namespace MoodAnalyser
                 throw new MoodAnalyserCustomException(MoodAnalyserCustomException.TypeOfException.NULL_MESSAGE, "Mood Should not be NULL");
             }
         }
+
     }
 }
